@@ -1,0 +1,4 @@
+GoPublic
+========
+
+golang public function
