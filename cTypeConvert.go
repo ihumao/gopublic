@@ -539,11 +539,38 @@ func FloatToStr(value float64) string {
 	return strconv.FormatFloat(value, 'f', -1, 64)
 }
 
+func StrToInt32(value string) int32 {
+	var n int32
+	var err error
+	if n, err = strconv.ParseInt(value, 10, 32); err != nil {
+		panic(err)
+	}
+	return n
+}
+
 func StrToInt64(value string) int64 {
 	var n int64
 	var err error
 	if n, err = strconv.ParseInt(value, 10, 64); err != nil {
 		panic(err)
+	}
+	return n
+}
+
+func StrToInt32Def(value string, r int32) int32 {
+	var n int32
+	var err error
+	if n, err = strconv.ParseInt(value, 10, 32); err != nil {
+		return r
+	}
+	return n
+}
+
+func StrToInt64Def(value string, r int64) int64 {
+	var n int64
+	var err error
+	if n, err = strconv.ParseInt(value, 10, 64); err != nil {
+		return r
 	}
 	return n
 }
