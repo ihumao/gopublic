@@ -540,12 +540,12 @@ func FloatToStr(value float64) string {
 }
 
 func StrToInt32(value string) int32 {
-	var n int32
+	var n int64
 	var err error
 	if n, err = strconv.ParseInt(value, 10, 32); err != nil {
 		panic(err)
 	}
-	return n
+	return int32(n)
 }
 
 func StrToInt64(value string) int64 {
@@ -558,12 +558,12 @@ func StrToInt64(value string) int64 {
 }
 
 func StrToInt32Def(value string, r int32) int32 {
-	var n int32
+	var n int64
 	var err error
 	if n, err = strconv.ParseInt(value, 10, 32); err != nil {
 		return r
 	}
-	return n
+	return int32(n)
 }
 
 func StrToInt64Def(value string, r int64) int64 {
